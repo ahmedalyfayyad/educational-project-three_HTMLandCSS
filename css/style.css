@@ -6,68 +6,68 @@
   padding: 0;
   margin: 0;
 }
+
 :root {
   --main-color: #c40000;
   --second-color: #c80000;
   --transition: 0.3s;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   font-family: "Poppins", sans-serif;
 }
+
 /* Reset */
 ul {
   list-style: none;
 }
+
 a {
   text-decoration: none;
 }
+
 .container {
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
 }
+
 /* End Global Rules */
+
 /* Start Responsive */
-/* Small */
-.container {
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: auto;
-  margin-right: auto;
-}
 @media (min-width: 768px) {
   .container {
     width: 750px;
   }
 }
 
-/* Medium */
 @media (min-width: 992px) {
   .container {
     width: 970px;
   }
 }
 
-/* Large */
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
   }
 }
 /* End Responsive */
-/* Start Components */
-/* End Components */
+
 /* Start Header */
 .header {
   background-color: white;
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.07) -4px 9px 25px -6px;
   height: 70px;
+  z-index: 1;
 }
+
 .header .container {
   display: flex;
   justify-content: space-between;
@@ -75,22 +75,27 @@ a {
   flex-wrap: wrap;
   position: relative;
 }
+
 .header .logo {
-  color: var(--main-color);
   height: 70px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
+
 .header .links {
   display: flex;
 }
+
 .header .container .links ul {
   display: flex;
 }
+
 .header .container .links ul li {
   position: relative;
 }
+
 .header .container .links ul li a {
   color: black;
   text-transform: capitalize;
@@ -103,6 +108,7 @@ a {
   transition: var(--transition);
   overflow: hidden;
 }
+
 .header .container .links ul > li a::before {
   content: "";
   width: 100%;
@@ -113,24 +119,124 @@ a {
   left: -100%;
   transition: var(--transition);
 }
+
 .header .container .links ul > li a:hover::before {
   left: 0;
 }
+
 .header .container .links ul li a:hover {
   background-color: rgba(0, 0, 0, 0.01);
   color: var(--main-color);
 }
+
 /* Media */
 @media (max-width: 767px) {
-    .header{
-        box-shadow: none;
-    }
-    .header .container .logo{
-        width: 100%;
-        margin: 5px;
-    }
-    .header .container .links{
-        margin: auto;
-    }
+  .header {
+    box-shadow: none;
+  }
+
+  .header .container .logo {
+    width: 100%;
+    margin: 5px;
+  }
+  .header .container .logo a img {
+    width: 60px;
+  }
+
+  .header .container .links {
+    margin: auto;
+    font-size: 14px;
+  }
+  .header .container .links ul li a {
+    height: 40px;
+  }
 }
 /* End Header */
+/* Start Landing */
+.landing {
+  position: relative;
+}
+.landing::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #f6f6f6;
+  z-index: -1;
+  transform: skewy(-6deg);
+  transform-origin: top left;
+}
+.landing .container {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 70px);
+}
+.landing .container .text {
+  flex: 1;
+}
+.landing .container .text h2,
+.landing .container .text p {
+  text-transform: capitalize;
+}
+.landing .container .text h2 {
+  font-size: 50px;
+  padding: 15px;
+}
+.landing .container .text p {
+  line-height: 1.8;
+  padding: 15px;
+  color: #999;
+}
+.landing .container .img img {
+  position: relative;
+  animation: up-and-down 4s linear infinite;
+}
+
+.landing .go-down {
+  color: var(--main-color);
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: var(--transition);
+}
+.landing .go-down:hover {
+  color: var(--second-color);
+}
+.landing .go-down i {
+  animation: bouncing 1s infinite;
+}
+/* Media */
+@media (max-width: 767px) {
+  .landing .container .text {
+    text-align: center;
+  }
+  .landing .container .img img {
+    display: none;
+  }
+}
+/* Animation */
+@keyframes up-and-down {
+  0%,
+  100% {
+    top: 0;
+  }
+  50% {
+    top: -50px;
+  }
+}
+@keyframes bouncing {
+    0%,
+    10%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40%,
+    60% {
+      transform: translateY(-15px);
+    }
+  }
+/* End Landing */
