@@ -15,8 +15,8 @@
   --alt-color: #f22e2e;
   --color-hover: #52428c08;
   --main-transition: 0.3s;
-  --main-padding:100px;
-  --main-radius:8px;
+  --main-padding: 100px;
+  --main-radius: 8px;
 }
 
 html {
@@ -56,9 +56,9 @@ a {
   transition: var(--main-transition);
   text-transform: capitalize;
 }
-.main-title:hover{
-    color:white;
-    border: 1px solid white;
+.main-title:hover {
+  color: white;
+  border: 1px solid white;
 }
 .main-title::before,
 .main-title::after {
@@ -372,71 +372,117 @@ a {
 }
 /* End Landing */
 /* Start Articles */
-.articles{
-    padding: var(--main-padding) 0;
+.articles {
+  padding: var(--main-padding) 0;
 }
-.articles .container{
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(250px , 1fr));
-    gap: 40px;
+.articles .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 40px;
 }
-.articles .container .box{
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border-radius: var(--main-radius);
-    overflow: hidden;
-    transition: transform var(--main-transition), box-shadow;
+.articles .container .box {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: var(--main-radius);
+  overflow: hidden;
+  transition: transform var(--main-transition), box-shadow;
 }
-.articles .container .box:hover{
-    transform: translateY(-10px);
-    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+.articles .container .box:hover {
+  transform: translateY(-10px);
+  box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
 }
-.articles .container .box img{
-    width: 100%;
-    max-width: 100%;
+.articles .container .box img {
+  width: 100%;
+  max-width: 100%;
 }
-.articles .container .box .content{
-    padding: 20px;
+.articles .container .box .content {
+  padding: 20px;
 }
-.articles .container .box .content h3{
-    padding-bottom: 10px;
-    font-weight: normal;
+.articles .container .box .content h3 {
+  padding-bottom: 10px;
+  font-weight: normal;
 }
-.articles .container .box .content p{
-    line-height: 1.8;
-    color: #999;
+.articles .container .box .content p {
+  line-height: 1.8;
+  color: #999;
 }
-.articles .container .box .info{
-    padding: 20px;
-    border-top: 1px solid #c2c2c2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.articles .container .box .info {
+  padding: 20px;
+  border-top: 1px solid #c2c2c2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.articles .container .box .info a{
-    color:var(--main-color);
-    font-weight: bold;
+.articles .container .box .info a {
+  color: var(--main-color);
+  font-weight: bold;
 }
-.articles .container .box .info i{
-    color:var(--main-color);
-    cursor: pointer;
+.articles .container .box .info i {
+  color: var(--main-color);
+  cursor: pointer;
 }
-.articles .container .box:hover .info i{
-    animation: moving-arrow 1s linear infinite;
-    color: var(--second-color);
+.articles .container .box:hover .info i {
+  animation: moving-arrow 1s linear infinite;
+  color: var(--second-color);
 }
 /* Animation */
 @keyframes moving-arrow {
-    0%{
-        transform: translateX(-10px);
-    }
-    100%{
-        transform: translateX(10px);
-    }
+  0% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
 }
 /* End Articles */
 /* Start Gallery */
-.gallery{}
-.gallery .box{}
-.gallery .box .image{}
-.gallery .image img{}
+.gallery {
+  padding: var(--main-padding) 0;
+}
+.gallery .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.gallery .box {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    padding: 15px;
+}
+.gallery .box .image{
+  position: relative;
+  overflow: hidden;
+}
+.gallery .box .image::before{
+    content:"";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(255, 255, 255, 0.232);
+    width: 0;
+    height: 0;
+    z-index: 2;
+}
+.gallery .box .image:hover::before{
+  animation: flashing .8s ;
+}
+.gallery .box .image img {
+  width: 100%;
+  max-width: 100%;
+  transition: var(--main-transition);
+}
+.gallery .box .image:hover img{
+  transform: rotate(5deg) scale(1.1);
+}
+
+/* Animation */
+@keyframes flashing {
+  0%,40%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    width: 200%;
+    height: 200%;
+  }
+}
 /* End Gallery */
