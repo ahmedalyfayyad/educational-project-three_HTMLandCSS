@@ -49,12 +49,12 @@ a {
 .main-title {
   margin: 100px auto;
   width: fit-content;
-  border: 1px solid var(--background-color);
+  border: 2px solid black;
   padding: 10px 20px;
   position: relative;
   z-index: 1;
   transition: var(--main-transition);
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 .main-title:hover {
@@ -531,7 +531,7 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.232);
+  background-color: rgba(255, 255, 255, 0.132);
   width: 0;
   height: 0;
   z-index: 2;
@@ -651,3 +651,61 @@ a {
 }
 
 /* End Feature */
+/* Start Testimonials */
+.testimonials {
+  padding: var(--main-padding) 0;
+  position: relative;
+}
+.testimonials .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+  background-color: var(--second-color);
+  padding: 30px;
+  border-radius: var(--main-radius);
+}
+.testimonials .container .box {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 15px;
+  padding: 20px;
+  position: relative;
+  border-radius: var(--main-radius);
+  background-color: white;
+}
+.testimonials .container .box img {
+  width: 80px;
+  position: absolute;
+  right: 0px;
+  top: -50px;
+  border-radius: 50%;
+  border: 7px solid var(--second-color);
+}
+.testimonials .container .box h3 {
+  padding-bottom: 10px;
+  color: var(--main-color);
+  font-weight: normal;
+  font-size: 24px;
+}
+.testimonials .container .box span {
+  color: #555;
+  padding-bottom: 10px;
+  display: block;
+}
+.testimonials .container .box .rate {
+  padding-bottom: 30px;
+}
+.testimonials .container .box .rate .filled {
+  color: gold;
+}
+.testimonials .container .box p {
+  color: #777;
+  line-height: 1.8;
+}
+/* End Testimonials */
+
+/* Start Selection */
+::selection {
+  color: white;
+  background: var(--main-color);
+}
+/* End Selection */
