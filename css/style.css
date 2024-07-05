@@ -723,12 +723,18 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 100px 90px;
-  padding: 30px;
   border-radius: var(--main-radius);
   margin: 0 auto;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .team .container .box {
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 .team .container .box::before {
   content: "";
@@ -777,9 +783,11 @@ a {
   padding-bottom: 10px;
   color: #777;
 }
+/* Start Media */
 @media (max-width: 767px) {
   .team .container {
     margin-right: 10%;
   }
 }
+/* End Media */
 /* End Team Members */
