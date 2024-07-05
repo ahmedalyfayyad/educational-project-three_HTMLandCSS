@@ -118,8 +118,13 @@ a {
     height: 90%;
   }
 }
-
 /* End Main Title */
+/* Start Selection */
+::selection {
+  color: white;
+  background: var(--main-color);
+}
+/* End Selection */
 /* End Components */
 /* Start Responsive */
 @media (min-width: 768px) {
@@ -649,7 +654,13 @@ a {
     rgba(240, 46, 170, 0.05) 0px 25px;
   border: none;
 }
-
+/* Start Media */
+@media (max-width: 767px) {
+  .features .container .box .text {
+    border: none;
+  }
+}
+/* End Media */
 /* End Feature */
 /* Start Testimonials */
 .testimonials {
@@ -703,9 +714,72 @@ a {
 }
 /* End Testimonials */
 
-/* Start Selection */
-::selection {
-  color: white;
-  background: var(--main-color);
+/* Start Team Members */
+.team {
+  padding: var(--main-padding) 0;
+  position: relative;
 }
-/* End Selection */
+.team .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 100px 90px;
+  padding: 30px;
+  border-radius: var(--main-radius);
+  margin: 0 auto;
+}
+.team .container .box {
+  position: relative;
+}
+.team .container .box::before {
+  content: "";
+  width: calc(100% - 30px);
+  height: calc(100% + 60px);
+  background-color: rgb(243, 243, 243);
+  position: absolute;
+  z-index: -2;
+  right: -40px;
+  top: -50px;
+  border-radius: var(--main-radius);
+}
+.team .container .box .shape {
+  display: flex;
+}
+.team .container .box .shape img {
+  max-width: 100%;
+  border-radius: var(--main-radius);
+}
+.team .container .box .shape .social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+.team .container .box .shape .social a {
+  display: block;
+  padding-right: 20px;
+  padding-bottom: 30px;
+}
+.team .container .box .shape .social a i {
+  color: var(--main-color);
+}
+.team .container .box .shape .social a i:hover {
+  color: var(--second-color);
+}
+.team .container .info {
+  margin-left: 90px;
+  margin-top: 20px;
+}
+.team .container .info h3 {
+  padding-bottom: 5px;
+  color: var(--main-color);
+}
+.team .container .info p {
+  padding-bottom: 10px;
+  color: #777;
+}
+@media (max-width: 767px) {
+  .team .container {
+    margin-right: 10%;
+  }
+}
+/* End Team Members */
