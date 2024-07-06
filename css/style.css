@@ -740,12 +740,28 @@ a {
   content: "";
   width: calc(100% - 30px);
   height: calc(100% + 60px);
-  background-color: rgb(243, 243, 243);
+  background-color: #f7f7f7;
   position: absolute;
   z-index: -2;
   right: -40px;
   top: -50px;
   border-radius: var(--main-radius);
+}
+.team .container .box::after{
+  content: "";
+  width: 0;
+  height: calc(100% + 60px);
+  background-color: #d6d6d6;
+  position: absolute;
+  z-index: -2;
+  right: -40px;
+  top: -50px;
+  border-radius: var(--main-radius);
+  transition: var(--main-transition);
+  z-index: -1;
+}
+.team .container .box:hover::after{
+  width: calc(100% - 30px);
 }
 .team .container .box .shape {
   display: flex;
@@ -766,10 +782,10 @@ a {
   padding-bottom: 30px;
 }
 .team .container .box .shape .social a i {
-  color: var(--main-color);
+  color: #777;
 }
 .team .container .box .shape .social a i:hover {
-  color: var(--second-color);
+  color: #b42b76;
 }
 .team .container .info {
   margin-left: 90px;
@@ -783,6 +799,15 @@ a {
   padding-bottom: 10px;
   color: #777;
 }
+.team .container .box:hover .info h3 {
+  color: #777
+}
+.team .container .box:hover .shape .social a i {
+  color:var(--main-color)
+}
+
+/* Start Animation */
+/* End Animation */
 /* Start Media */
 @media (max-width: 767px) {
   .team .container {
