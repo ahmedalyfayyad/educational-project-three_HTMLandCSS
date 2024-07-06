@@ -816,3 +816,40 @@ a {
 }
 /* End Media */
 /* End Team Members */
+/* Start Services */
+.services{
+  padding: var(--main-padding) 0;
+  position: relative;
+}
+.services .container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.services .container .box{
+  position: relative;
+  text-align: center;
+  background-color: #f9f9f9;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.services .container .box i{
+  color: #999;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+.services .container .box h3{
+  padding-bottom: 40px;
+  color: var(--main-color);
+}
+.services .container .info{
+  background-color: rgba(0, 0, 0, 0.0099) ;
+}
+.services .container .info a{
+  display: flex;
+  padding-top: 30px;
+  justify-content: end;
+  padding: 20px;
+  color:var(--main-color);
+
+}
+/* End Services */
