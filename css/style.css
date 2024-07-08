@@ -1172,14 +1172,17 @@ a {
   text-align: center;
 }
 .pricing .container .box {
+  position: relative;
   border: 1px solid var(--main-color);
   border-radius: var(--main-radius);
   transition: var(--main-transition);
-  box-shadow: rgba(240, 46, 170, 0.4)0px 2px 4px,
-  rgba(240, 46, 170, 0.3) 0px 7px 13px -3px, rgba(240, 46, 170, 0.1) 0px -3px 0px inset;
+  box-shadow: rgba(240, 46, 170, 0.4) 0px 2px 4px,
+    rgba(240, 46, 170, 0.3) 0px 7px 13px -3px,
+    rgba(240, 46, 170, 0.1) 0px -3px 0px inset;
+  overflow: hidden;
 }
 .pricing .container .box:hover {
-  transform: translateY(-10px);
+  transform: translateY(-15px);
 }
 .pricing .container .box i {
 }
@@ -1223,6 +1226,22 @@ a {
     rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px,
     rgba(240, 46, 170, 0.05) 0px 25px;
 }
+.pricing .container .box.two {
+  transform: translateY(-15px);
+}
+.pricing .container .box.two .popular{
+  font-weight: normal;
+  font-size: 16px;
+  position: absolute;
+  writing-mode: vertical-rl;
+  right: 15px;
+  padding: 10px;
+  background-color: var(--second-color);
+  color: white;
+}
+.pricing .container .box.two:hover {
+  transform: translateY(-25px);
+}
 .pricing .container .box.three:hover {
   box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
     rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
@@ -1230,12 +1249,17 @@ a {
 }
 /* Start Media */
 @media (max-width: 767px) {
-  .pricing .container .box.one,
-  .pricing .container .box.two,
-  .pricing .container .box.three {
+  .pricing .container .box.one:hover,
+  .pricing .container .box.two:hover,
+  .pricing .container .box.three:hover {
     box-shadow: rgba(240, 46, 170, 0.4) 0px 5px,
       rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px,
       rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+  }
+  .pricing .container .box.one,
+  .pricing .container .box.two,
+  .pricing .container .box.three {
+    margin-bottom: 60px;
   }
 }
 /* End Media */
