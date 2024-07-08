@@ -1264,3 +1264,90 @@ a {
 }
 /* End Media */
 /* End Price */
+/* Start Videos */
+.videos{
+  padding: var(--main-padding) 0;
+  position: relative;
+}
+.videos .container{
+  position: relative;
+}
+.videos .container .holder{
+  overflow: hidden;
+  display: flex;
+  border: 5px solid var(--main-color);
+  border-radius: var(--main-radius);
+}
+
+.videos .container .holder .list{
+  flex: 1;
+  margin-right:5px ;
+  background-color: #f9f9f9;
+}
+.videos .container .holder .list .top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eee;
+  padding: 20px;
+
+}
+.videos .container .holder .list .top h4{
+  color: var(--main-color);
+  font-size: 25px;
+}
+.videos .container .holder .list .top i{
+  font-size: 20px;
+  color: #999;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.videos .container .holder .list ul li{
+  transition: var(--main-transition);
+  padding: 22px 10px;
+  cursor: pointer;
+  padding-left: 20px;
+}
+.videos .container .holder .list ul li:hover{
+  color: var(--main-color);
+  background-color: #f4f4f4;
+}
+.videos .container .holder .list ul li:not(:last-of-type){
+  border-bottom: 1px solid var(--main-color);
+}
+
+.videos .container .holder .list ul li span{
+  color: #999;
+  margin-left: 10px;
+}
+.videos .container .holder .preview{
+  text-align: center;
+}
+.videos .container .preview img{
+  max-width:100%;
+  margin: 10px 10px 0;
+  border-radius: var(--main-radius);
+}
+.videos .container .holder .preview p{
+  padding: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--second-color);
+}
+@media (max-width:991px) {
+  .videos .container .holder{
+    flex-direction: column;
+  }
+  .videos .container .preview img{
+    max-width:95%;
+    margin: 10px 10px 0;
+  }
+  .videos .container .holder .list{
+    margin-right: 0px;
+  }
+  .videos .container .holder .preview p{
+    font-size: 20px;
+  }
+}
+/* End Videos */
