@@ -954,7 +954,6 @@ a {
 .how {
   padding: var(--main-padding) 0;
   position: relative;
-  background-color: #f6f6f6;
 }
 .how .container {
   display: flex;
@@ -1090,7 +1089,7 @@ a {
 }
 .events .subscribe {
   text-align: center;
-  margin-top: 200px;
+  margin-top: 100px;
 }
 .events .subscribe form {
   width: 600px;
@@ -1101,21 +1100,21 @@ a {
   display: flex;
   gap: 20px;
 }
-.events .subscribe form input[type='email'] {
+.events .subscribe form input[type="email"] {
   padding: 20px;
   border-radius: 50px;
   border: none;
   flex: 1;
   caret-color: var(--main-color);
 }
-  .events .subscribe form input[type='email']:focus {
-    outline: none;
-  }
-  .events .subscribe form input[type="email"]:focus::placeholder {
-    opacity: 0;
-  }
+.events .subscribe form input[type="email"]:focus {
+  outline: none;
+}
+.events .subscribe form input[type="email"]:focus::placeholder {
+  opacity: 0;
+}
 
-.events .subscribe form input[type='submit']{
+.events .subscribe form input[type="submit"] {
   border-radius: 50px;
   border: none;
   background-color: var(--main-color);
@@ -1152,10 +1151,92 @@ a {
     margin-top: 100px;
   }
   .events .subscribe form {
+    background-color: rgb(245, 245, 245);
     max-width: 100%;
     padding: 20px;
     flex-direction: column;
     border-radius: 0;
+  }
 }
 /* End Media */
 /* End Events */
+/* Start Price */
+.pricing {
+  padding: var(--main-padding) 0;
+  position: relative;
+}
+.pricing .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+.pricing .container .box {
+  border: 1px solid var(--main-color);
+  border-radius: var(--main-radius);
+  transition: var(--main-transition);
+  box-shadow: rgba(240, 46, 170, 0.4)0px 2px 4px,
+  rgba(240, 46, 170, 0.3) 0px 7px 13px -3px, rgba(240, 46, 170, 0.1) 0px -3px 0px inset;
+}
+.pricing .container .box:hover {
+  transform: translateY(-10px);
+}
+.pricing .container .box i {
+}
+.pricing .container .box .plan {
+  padding: 20px 0 10px;
+  font-size: 20px;
+}
+.pricing .container .box .price {
+  font-size: 50px;
+  color: var(--main-color);
+}
+.pricing .container .box span {
+  display: block;
+  font-size: 12px;
+  color: #777;
+  padding-bottom: 20px;
+}
+.pricing .container .box p {
+  padding: 20px;
+  border-top: 1px solid var(--main-color);
+  text-align: left;
+}
+.pricing .container .box button {
+  padding: 10px 30px;
+  margin: 30px;
+  border-radius: var(--main-radius);
+  background-color: var(--main-color);
+  border: none;
+  color: white;
+}
+.pricing .container .box button:hover {
+  background-color: var(--second-color);
+}
+.pricing .container .box.one:hover {
+  box-shadow: rgba(240, 46, 170, 0.4) -5px 5px,
+    rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px,
+    rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+}
+.pricing .container .box.two:hover {
+  box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px,
+    rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px,
+    rgba(240, 46, 170, 0.05) 0px 25px;
+}
+.pricing .container .box.three:hover {
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px;
+}
+/* Start Media */
+@media (max-width: 767px) {
+  .pricing .container .box.one,
+  .pricing .container .box.two,
+  .pricing .container .box.three {
+    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px,
+      rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px,
+      rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+  }
+}
+/* End Media */
+/* End Price */
