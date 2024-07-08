@@ -965,10 +965,9 @@ a {
 }
 .how .container img {
   position: relative;
-  animation: up-and-down 4s linear infinite;
 }
 .how .container .description {
-  background-color: #efefef;
+  background-color: #fbfbfb;
   text-align: center;
   margin-bottom: 20px;
   border: 1px solid white;
@@ -1095,7 +1094,7 @@ a {
   width: 600px;
   margin: 0 auto;
   padding: 30px 40px;
-  background-color: #eee;
+  background-color: #fbfbfb;
   border-radius: 60px;
   display: flex;
   gap: 20px;
@@ -1229,7 +1228,7 @@ a {
 .pricing .container .box.two {
   transform: translateY(-15px);
 }
-.pricing .container .box.two .popular{
+.pricing .container .box.two .popular {
   font-weight: normal;
   font-size: 16px;
   position: absolute;
@@ -1265,89 +1264,169 @@ a {
 /* End Media */
 /* End Price */
 /* Start Videos */
-.videos{
+.videos {
   padding: var(--main-padding) 0;
   position: relative;
 }
-.videos .container{
+.videos .container {
   position: relative;
 }
-.videos .container .holder{
+.videos .container .holder {
   overflow: hidden;
   display: flex;
   border: 5px solid var(--main-color);
   border-radius: var(--main-radius);
 }
 
-.videos .container .holder .list{
+.videos .container .holder .list {
   flex: 1;
-  margin-right:5px ;
+  margin-right: 5px;
   background-color: #f9f9f9;
 }
-.videos .container .holder .list .top{
+.videos .container .holder .list .top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #eee;
   padding: 20px;
-
 }
-.videos .container .holder .list .top h4{
+.videos .container .holder .list .top h4 {
   color: var(--main-color);
   font-size: 25px;
 }
-.videos .container .holder .list .top i{
+.videos .container .holder .list .top i {
   font-size: 20px;
   color: #999;
   margin-right: 10px;
   cursor: pointer;
 }
 
-.videos .container .holder .list ul li{
+.videos .container .holder .list ul li {
   transition: var(--main-transition);
   padding: 22px 10px;
   cursor: pointer;
   padding-left: 20px;
 }
-.videos .container .holder .list ul li:hover{
+.videos .container .holder .list ul li:hover {
   color: var(--main-color);
   background-color: #f4f4f4;
 }
-.videos .container .holder .list ul li:not(:last-of-type){
+.videos .container .holder .list ul li:not(:last-of-type) {
   border-bottom: 1px solid var(--main-color);
 }
 
-.videos .container .holder .list ul li span{
+.videos .container .holder .list ul li span {
   color: #999;
   margin-left: 10px;
 }
-.videos .container .holder .preview{
+.videos .container .holder .preview {
   text-align: center;
 }
-.videos .container .preview img{
-  max-width:100%;
+.videos .container .preview img {
+  max-width: 100%;
   margin: 10px 10px 0;
   border-radius: var(--main-radius);
 }
-.videos .container .holder .preview p{
+.videos .container .holder .preview p {
   padding: 10px;
   font-size: 24px;
   font-weight: bold;
   color: var(--second-color);
 }
-@media (max-width:991px) {
-  .videos .container .holder{
+@media (max-width: 991px) {
+  .videos .container .holder {
     flex-direction: column;
   }
-  .videos .container .preview img{
-    max-width:95%;
+  .videos .container .preview img {
+    max-width: 95%;
     margin: 10px 10px 0;
   }
-  .videos .container .holder .list{
+  .videos .container .holder .list {
     margin-right: 0px;
   }
-  .videos .container .holder .preview p{
+  .videos .container .holder .preview p {
     font-size: 20px;
   }
 }
 /* End Videos */
+/* End Videos */
+/* Start Stats */
+.stats {
+  padding: var(--main-padding) 0;
+  position: relative;
+  background-image: url("../images/stats.jpg");
+  background-size: cover;
+  min-height: 300px;
+  margin: 100px 0;
+}
+.stats::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255 255 255 / 95%);
+}
+.stats h2 {
+  font-weight: bold;
+  font-size: 40px;
+  width: fit-content;
+  margin: 0 auto 50px;
+  position: relative;
+}
+.stats .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+.stats .container .box {
+  background-color: white;
+  padding: 30px 15px;
+  text-align: center;
+  position: relative;
+  transition: var(--main-transition);
+}
+.stats .container .box::before,
+.stats .container .box::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background-color: var(--main-color);
+  transition: 1s;
+  height: 0;
+}
+.stats .container .box::before {
+  top: 0;
+  right: 0;
+}
+.stats .container .box::after {
+  left: 0;
+  bottom: 0;
+}
+.stats .container .box:hover::before,
+.stats .container .box:hover::after {
+  height: 100%;
+}
+.stats .container .box .number {
+  display: block;
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  opacity: 0.7;
+  transition: var(--main-transition);
+}
+.stats .container .box:hover .number {
+  opacity: 1;
+}
+.stats .container .box .text {
+  color: var(--main-color);
+  font-style: italic;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* End Stats */
+
+
