@@ -1370,12 +1370,13 @@ a {
 }
 .stats h2 {
   font-weight: bold;
-  font-size: 40px;
+  font-size: 30px;
   width: fit-content;
   margin: 0 auto 50px;
   position: relative;
 }
 .stats .container {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
@@ -1426,7 +1427,111 @@ a {
   font-size: 20px;
   font-weight: bold;
 }
-
+@media (max-width: 767px) {
+  .stats {
+    background: none;
+  }
+}
 /* End Stats */
+.discount {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+.discount .image {
+  background-image: url(../images/discount.jpg);
+  background-size: cover;
+  color: white;
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  animation: change-background 10s linear infinite;
+}
+.discount .image::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f279b1d6;
+  z-index: -1;
+}
+@media (max-width: 991px) {
+  .discount .image {
+    flex-basis: 100%;
+  }
+}
+.discount .form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 50%;
+  text-align: center;
+}
+.discount .form .input {
+  display: block;
+  width: 450px;
+  margin-bottom: 25px;
+  padding: 15px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: #f9f9f9;
+  caret-color: var(--main-color);
+  font-size: 14px;
+}
 
-
+@media (max-width: 991px) {
+  .discount .form {
+    flex-basis: 100%;
+  }
+  .discount .form .input{
+  width: 300px;
+  }
+}
+.discount .form textarea.input {
+  resize: none;
+  height: 200px;
+}
+.discount .form .input:focus {
+  outline: none;
+}
+.discount .form [type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+.discount .form [type="submit"]:hover {
+  background-color: var(--second-color);
+}
+.discount .image .content {
+  text-align: center;
+  padding: 0 20px;
+}
+.discount .image .content h2 {
+  font-size: 30px;
+  margin: 30px 0;
+}
+.discount .image .content p {
+  line-height: 1.6;
+  font-size: 18px;
+  max-width: 500px;
+}
+.discount .image .content img {
+  width: 300px;
+  max-width: 100%;
+}
+.discount .form .content h2{
+  margin: 30px 0;
+}
+/* End Discount */
