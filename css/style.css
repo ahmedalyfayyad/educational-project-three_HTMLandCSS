@@ -1448,7 +1448,7 @@ a {
   justify-content: center;
   position: relative;
   z-index: 1;
-  animation: change-background 10s linear infinite;
+  /* animation: change-background 10s linear infinite; */
 }
 .discount .image::before {
   content: "";
